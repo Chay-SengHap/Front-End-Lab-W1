@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Quiz Editor</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script defer src="edit.js"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+
+  <!-- NAVBAR -->
+  <nav class="flex justify-between items-center px-8 py-4 bg-blue-200">
+    <a href="../../index.html">
+
+        <div class="flex items-center gap-4">
+          <img src="../../img/logo.png" class="h-10" />
+          <h2 class="text-xl font-bold">Quiz App</h2>
+          
+        </div>
+      </a>
+    <div class="flex gap-4">
+      <a href="edit.html" class="bg-orange-400 text-white px-4 py-2 rounded-lg">Edit Quiz</a>
+      <a href="../play/play.html" class="bg-orange-300 px-4 py-2 rounded-lg">Play Quiz</a>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="p-8 max-w-4xl mx-auto">
+    <button onclick="onAddQuestion()" class="mb-6 bg-green-500 text-white px-4 py-2 rounded-lg">
+      Add Question
+    </button>
+
+    <div id="questions-container" class="space-y-4"></div>
+  </main>
+
+  <!-- MODAL -->
+  <div id="questions-dialog" class="fixed inset-0 bg-black/50 hidden flex items-center justify-center">
+    <div class="bg-white w-full max-w-md rounded-xl p-6 space-y-4">
+      <h3 class="text-lg font-bold" id="dialog-title">Create Question</h3>
+
+      <input id="title" class="w-full border p-2 rounded" placeholder="Question title" />
+      <input id="choiceA" class="w-full border p-2 rounded" placeholder="Answer A" />
+      <input id="choiceB" class="w-full border p-2 rounded" placeholder="Answer B" />
+      <input id="choiceC" class="w-full border p-2 rounded" placeholder="Answer C" />
+      <input id="choiceD" class="w-full border p-2 rounded" placeholder="Answer D" />
+      <input id="answer" class="w-full border p-2 rounded" placeholder="Answer " />
+
+      <div class="flex justify-end gap-3 pt-4">
+        <button onclick="onCancel()" class="px-4 py-2 rounded bg-gray-300">Cancel</button>
+        <button onclick="onCreate()" id="createEditBtn"
+          class="px-4 py-2 rounded bg-blue-500 text-white">
+          Create
+        </button>
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>

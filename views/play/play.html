@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Quiz</title>
+    <script defer src="play.js"></script>
+  </head>
+  <body class="bg-gray-50">
+    <nav class="flex justify-between items-center px-8 py-4 bg-blue-200">
+      <a href="../../index.html">
+
+        <div class="flex items-center gap-4">
+          <img src="../../img/logo.png" class="h-10" />
+          <h2 class="text-xl font-bold">Quiz App</h2>
+          
+        </div>
+      </a>
+      <div class="flex gap-4">
+        <a href="../edit/edit.html" class="bg-orange-400 text-white px-4 py-2 rounded-lg hover:bg-orange-500 transition">Edit Quiz</a>
+        <a href="../play/play.html" class="bg-orange-300 px-4 py-2 rounded-lg hover:bg-orange-400 transition">Play Quiz</a>
+      </div>
+    </nav>
+
+    <!-- MAIN CONTAINER -->
+    <div class="p-0 m-0 w-[100vw] h-[calc(100vh-4rem)] flex justify-center items-center relative">
+      <!-- START SCREEN -->
+      <div id="start" class="text-center">
+        <div class="text-5xl bg-blue-200 p-8 rounded-lg cursor-pointer hover:bg-blue-300 transition mb-8">Start Quiz!</div>
+        <p class="text-gray-600">Click above to start the quiz</p>
+      </div>
+
+      <!-- QUIZ SCREEN -->
+      <div id="quiz" class="hidden w-full max-w-4xl p-8">
+        <div id="question" class="text-3xl p-10 bg-white rounded-xl shadow-lg mb-10"></div>
+        <div id="choices" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="choice bg-blue-100 p-6 rounded-xl cursor-pointer hover:bg-blue-200 transition text-xl" id="A" onclick="checkAnswer('A')"></div>
+          <div class="choice bg-blue-100 p-6 rounded-xl cursor-pointer hover:bg-blue-200 transition text-xl" id="B" onclick="checkAnswer('B')"></div>
+          <div class="choice bg-blue-100 p-6 rounded-xl cursor-pointer hover:bg-blue-200 transition text-xl" id="C" onclick="checkAnswer('C')"></div>
+          <div class="choice bg-blue-100 p-6 rounded-xl cursor-pointer hover:bg-blue-200 transition text-xl" id="D" onclick="checkAnswer('D')"></div>
+        </div>
+        <div class="mt-10 text-xl text-gray-600">
+          Question <span id="current-question">1</span> of <span id="total-questions">3</span>
+        </div>
+      </div>
+      
+      <!-- SCORE SCREEN -->
+      <div id="score" class="hidden text-center p-8">
+        <!-- Score content will be inserted here -->
+      </div>
+    </div>
+  </body>
+</html>
